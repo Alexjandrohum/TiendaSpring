@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymelaf.org">
+    <head th:replace="layout/plantilla :: bootstrap">
+        <title>Listado de direcciones</title>
+    </head>
+    <body>
+        <section th:fragment="listadoDirecciones" id="direcciones">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Lista de direcciones</h4>
+                            </div>
+                            <div th:if="${direcciones != null and !direcciones.empty}">
+                                <table class="table table-stryped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Address</th>
+                                            <th>No. Interior</th>
+                                            <th>No. Exterior</th>
+                                            <th>No. Phone</th>
+                                            <th>State</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="direccion, contador : ${direcciones}">
+                                            <td>[[${contador.count}]]</td>
+                                            <td>[[${direccion.calle}]]</td>
+                                            <td th:text="${direccion.noInterior}"></td>
+                                            <td th:text="${direccion.noExterior}"></td>
+                                            <td th:text="${direccion.noCelular}"></td>
+                                            <td th:text="${direccion.idEstado}"></td>
+                                            <td>
+                                                <a th:href="@{/editarDireccion/} + ${direccion.idDireccion}"
+                                                   class="btn btn-secondary">
+                                                    <i class="fas fa-angle-double-right"></i> Edit
+                                                </a> 
+                                            </td>
+                                            <td>
+                                                <a th:href="@{/eliminarDireccion(idDireccion=${direccion.idDireccion})}"
+                                                   class="btn btn-dark">
+                                                    <i class="fas fa-angle-double-right"></i> Delete
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${direcciones == null or direcciones.empty}">
+                                <span>Lista vacía </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

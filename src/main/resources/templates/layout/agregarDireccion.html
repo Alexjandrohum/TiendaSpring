@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymelaf.org">
+    <head>
+        <title>Agregar cliente</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <section th:fragment="agregarDireccion">
+            <div id="agregarDirec" class="modal fade">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title">Agregar Cliente</h5>
+                            <button class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <form th:action="@{/guardarDireccion}" th:object="${direcciones}" method="POST" class="was-validated">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="calle" th:text="#{direccion.calle}"></label>
+                                    <input type="text" class="form-control" name="calle" required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label for="noInterior" th:text="direccion.noInterior"></label>
+                                    <input type="number" class="form-control" name="noInterior" required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label for="noExterior" th:text="#{direccion.noExterior}"></label>
+                                    <input type="number" class="form-control" name="noExterior">
+                                </div>
+                                <div class="form-group">
+                                    <label for="noCelular" th:text="#{direccion.celular}"></label>
+                                    <input type="number" class="form-control" name="noCelular" required="true">
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <label for="idEstado">State</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option th:each="estado : ${estados}" th:text="${estado.nombre}" value="${estado.IdEstado}"></option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <label for="inputState">Municipality</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option th:each="municipio : ${municipios}" th:text="${municipio.nombre}" value="${municipio.Id}"></option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <label for="inputState">Location</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option th:each="localidad : ${localidades}" th:text="${localidad.nombre}" value="${localidad.Id}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" th:text="Guardar"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
