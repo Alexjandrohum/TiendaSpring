@@ -16,7 +16,7 @@
 
         <div class="container">
             <div class="row justify-content-md-center col align-self-center">
-                <form class="border bg-secondary text-white" style="padding: 10%">
+                <form th:action="@{/menuTienda}" class="border bg-secondary text-white" style="padding: 10%">
                     <h1 style="text-align: center">Login</h1>
                     <br/>
                     <div class="form-group">
@@ -32,7 +32,7 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary" type="submit" th:text="Iniciar"></button>
                     <br/>
                     <br/>
                     <a th:href="@{/mostrarDirecciones}" style="color: white; text-align: center">Registrase</a>
