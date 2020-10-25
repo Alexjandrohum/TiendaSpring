@@ -22,7 +22,16 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav">
                             <li class="nav-item px-2">
-                                <a th:href="@{/}" class="nav-link active" th:text="#{barra.titulo}"></a>
+                                <a th:href="@{/menuTienda}" class="nav-link active" th:text="#{barra.titulo}"></a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a th:href="@{/mostrarDirecciones}" class="nav-link active" th:text="#{barra.ventas}"></a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a th:href="@{/menuTienda}" class="nav-link active" th:text="#{barra.envaces}"></a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a th:href="@{/menuTienda}" class="nav-link active" th:text="#{barra.cuentas}"></a>
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto">
@@ -44,6 +53,7 @@
                     </div>
                 </div>
             </nav>
+            <!--
             <section id="main-header" class="py-2 bg-info text-white">
                 <div class="container">
                     <div class="row">
@@ -53,7 +63,7 @@
                         </h1>
                     </div>
                 </div>
-            </section>
+            </section>-->
         </header>
         <footer th:fragment="footer" class="bg-warning text-white mt-5 p-2">
             <div class="container">

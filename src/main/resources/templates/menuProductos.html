@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
+    <head th:replace="layout/plantilla :: bootstrap">
         <title>menu</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h2>Store</h2>
-        <br/>
+        <section th:replace="layout/encabezados :: encabezadoInicio"></section>
+        <header th:replace="layout/plantilla :: header"></header>
+        
+        <section th:replace="layout/componentesMenu :: carrusel"></section>
+        
+        
     </body>
 </html>
