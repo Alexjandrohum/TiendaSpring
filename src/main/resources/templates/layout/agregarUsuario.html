@@ -34,7 +34,7 @@ and open the template in the editor.
                                             <label>Tipo de Usuario:*</label>
                                             <select class="form-control">
                                                 <option>...</option>
-                                                <option value="1"> ADMIN</option>
+                                                <option th:each=" tipo : ${tipos}" th:text="${tipo.nombreTipo}" value="${tipo.idTipoUser}"></option>
                                             </select>
                                         </div>
                                         <div class="form-group">
