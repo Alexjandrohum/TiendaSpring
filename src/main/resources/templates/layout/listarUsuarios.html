@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Usuarios</title>
+    </head>
+    <body>
+        <section th:fragment="listarUsuarios" id="usuarios">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <section th:replace="layout/botonesAgregar :: btnAgregar"></section>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Tipo de Usuario</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option th:each=" tipo : ${tipos}" th:text="${tipo.nombreTipo}" value="${tipo.idTipoUser}"></option>
+                            </select>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Usuarios</h2>
+                            </div>
+                            <div th:if="${usuarios != null and !usuarios.empty}">
+                                <table class="table table-stryped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="listaUsuarios : ${usuarios}">
+                                            <td th:text="${listaUsuarios.nombre}"></td>
+                                            <td th:text="${listaUsuarios.apellidos}"></td>
+                                            <td>
+                                                <a class="btn btn-secondary">
+                                                    <i class="fas fa-angle-double-right"></i> Editar
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-danger">
+                                                    <i class="fas fa-angle-double-right"></i> Eliminar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

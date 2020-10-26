@@ -24,13 +24,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @Slf4j
 public class UsuarioController {
-    
+
     @Autowired
     private IUsuarioDao usuarioDao;
     @Autowired
     private ITipoUsuarioDao tipoUsuarioDao;
 
-    @PostMapping("/registroUsuario")
+    @GetMapping("/registroUsuario")
     public String registroUsuario(Model model) {
         return "registroUsuario";
     }
@@ -39,13 +39,13 @@ public class UsuarioController {
     public String registroTienda(Model model) {
         return "registroTienda";
     }
-    
+
     @GetMapping("/listadoUsuarios")
-    public String listadoUsuarios(Model model){
-        
+    public String listadoUsuarios(Model model) {
+
         List<Usuario> usuarios = (List<Usuario>) usuarioDao.findAll();
         List<TipoUsuario> tipoUsuarios = (List<TipoUsuario>) tipoUsuarioDao.findAll();
-        
+
         model.addAttribute("usuarios", usuarios);
         model.addAttribute("tipos", tipoUsuarios);
         return "listadoUsuarios";

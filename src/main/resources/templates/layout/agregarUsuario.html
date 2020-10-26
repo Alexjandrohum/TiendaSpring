@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section th:fragment="agregarUser">
+            <div id="detailsUser">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    Agregar Usuario
+                                </div>
+                                <div class="card-body">
+                                    <form th:action="@{/registroTienda}">
+                                        <div class="form-group">
+                                            <label>Nombre:*</label> 
+                                            <input type="text" class="form-control" placeholder="Ingresa tu nombre">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Apellidos:*</label> 
+                                            <input type="text" class="form-control" placeholder="Ingresa tus apellidos">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Tipo de Usuario:*</label>
+                                            <select class="form-control">
+                                                <option>...</option>
+                                                <option value="1"> ADMIN</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Usuario:*</label> 
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contraseña:*</label> 
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Confirmar contraseña:*</label> 
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Foto:</label>
+                                            <image style=" width: 100px; height: 100px;" class="form-control">
+                                            <button type="submit" class="btn btn-success">Seleccionar</button>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Cantidad límete:</label> 
+                                            <input type="text" class="form-control col-md-2">
+                                        </div>
+                                        <br/>
+                                        <button type="submit" class="btn btn-primary col-md-2 ">Siguiente</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+    </body>
+</html>
