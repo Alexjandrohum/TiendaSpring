@@ -59,5 +59,29 @@ and open the template in the editor.
                 </div>
             </section>
         </section>
+        <section th:fragment="encabezadoProductos">
+            <section id="main-header" class="py-2 bg-info text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md6">
+                        </div>
+                        <h1>
+                            <i class="fas fa-cog"></i> [[#{plantilla.productos}]]
+                        </h1>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section th:fragment="encabezadoTienda">
+            <section id="main-header" class="py-2 bg-info text-white">
+                <div class="container">
+                    <div class="row">
+                        <h1>
+                            <i class="fas fa-cog"></i> [[#{plantilla.tienda}]]
+                        </h1>
+                    </div>
+                </div>
+            </section>
+        </section>
     </body>
 </html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla :: bootstrap">
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <section th:replace="layout/encabezados :: encabezadoProductos"></section>
+        <section th:replace="layout/plantilla :: header"></section>
+        <section th:replace="layout/botonesAgregar :: btnAgregarProducto"></section>
+        <section th:replace="layout/listarProductos :: listarProductos"></section>
+        <section th:replace="layout/plantilla :: footer"></section>
+    </body>
+</html>

@@ -4,14 +4,13 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <a th:href="@{/mostrarEstados}" class="btn btn-primary btn-block" data-toggle="modal" data-target="#agregarDirec">
+                        <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#agregarDirec">
                             <i class="fas fa-plus"></i> [[#{accion.agregar}]]
                         </a>
                     </div>
@@ -22,8 +21,19 @@
             <div class="row">
                 <div class="col-md-3">
                     <a th:href="@{/registroUsuario}" class="btn btn-primary btn-block">
-                        <i class="fas fa-plus"></i> Agregar
+                        <i class="fas fa-plus"></i> Agregar Usuario
                     </a>
+                </div>
+            </div>
+        </section>
+        <section th:fragment="btnAgregarProducto" class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="btn btn-primary btn-block">
+                            <i class="fas fa-plus"></i> Agregar Producto
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
